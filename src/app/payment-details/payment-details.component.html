@@ -6,6 +6,20 @@
         <app-payment-detail-form></app-payment-detail-form>
     </div>
     <div class="col-6">
-        list of 
+        <ul class="list-group">
+            <li class="d-flex  justify-content-between aling-items-start 
+            mb-2 border px-4 py-3 rounded-3" *ngFor="let pd of service.list">
+            
+                <div class=" flex-grow-1 mouse-hover" (click)="OnUpdate(pd)">
+                    <div class="fw-bold">{{pd.cardOwnerName}}</div>
+                    <div >{{pd.cardNumber}}</div>
+                    <div class="fw-bold">{{pd.expirationDate}}</div>
+                </div>
+                <span>
+                    <i class="fa-regular fa-trash-can mouse-hover" (click)="deleteRecord(pd.paymentDetailId)"></i>
+                </span>
+              
+            </li>
+        </ul>
     </div>
 </div>
